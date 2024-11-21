@@ -4,8 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build --docs",
+    "dev": "storybook dev -p 6006 | npx tailwindcss -i global.css -o output.css --watch",
+    "build": "storybook build --docs | npx tailwindcss -i ./global.css -o ./output.css",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
@@ -17,16 +17,19 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
     "@storybook/addon-actions": "^8.2.6",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
     "@storybook/react": "^8.2.6",
     "@storybook/react-vite": "^8.2.6",
     "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
+    "postcss": "^8.4.49",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",
-    "@repo/typescript-config": "*",
+    "tailwindcss": "^3.4.15",
     "typescript": "5.5.4",
     "vite": "^5.1.4"
   }

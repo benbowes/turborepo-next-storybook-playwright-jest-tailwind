@@ -5,7 +5,7 @@ export interface ButtonProps
 
 export function Button({ children, ...other }: ButtonProps): JSX.Element {
   return (
-    <button type="button" {...other}>
+    <button className="text-3xl font-bold underline" type="button" {...other}>
       {children}
     </button>
   );
