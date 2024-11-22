@@ -6,7 +6,7 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
     "test": "echo \"root test\" && turbo run test",
-    "test:ci": "npm run build && turbo run test:ci",
+    "test:ci": "turbo run build --filter=@repo/ui && turbo run test:ci",
     "e2e": "turbo run e2e",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
