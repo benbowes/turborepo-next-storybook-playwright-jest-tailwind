@@ -5,7 +5,11 @@ export interface ButtonProps
 
 export function Button({ children, ...other }: ButtonProps): JSX.Element {
   return (
-    <button className="text-3xl font-bold underline" type="button" {...other}>
+    <button
+      className="px-5 py-1 transition-colors duration-200 bg-slate-400 text-slate-100 rounded-xl hover:bg-slate-300 hover:text-slate-600"
+      type="button"
+      {...other}
+    >
       {children}
     </button>
   );

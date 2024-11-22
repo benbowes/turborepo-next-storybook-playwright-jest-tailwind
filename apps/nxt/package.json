@@ -1,5 +1,5 @@
 {
-  "name": "@acme/nxt",
+  "name": "@repo/nxt",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,8 @@
     "packages/*"
   ],
   "dependencies": {
-    "@acme/ui": "*",
+    "@repo/ui": "*",
+    "@repo/tailwind-config": "*",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "next": "15.0.3"

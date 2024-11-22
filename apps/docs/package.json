@@ -4,16 +4,18 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006 | npx tailwindcss -i global.css -o output.css --watch",
-    "build": "storybook build --docs | npx tailwindcss -i ./global.css -o ./output.css",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build --docs",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
-    "@acme/ui": "*",
+    "@repo/ui": "*",
+    "@repo/tailwind-config": "*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -29,7 +31,6 @@
     "postcss": "^8.4.49",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",
-    "tailwindcss": "^3.4.15",
     "typescript": "5.5.4",
     "vite": "^5.1.4"
   }

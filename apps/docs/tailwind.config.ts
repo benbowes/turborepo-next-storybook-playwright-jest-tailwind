@@ -1,13 +1,17 @@
+// /** @type {import('tailwindcss').Config} */
 import type { Config } from "tailwindcss";
 import sharedConfig from "@repo/tailwind-config";
 
 const config: Pick<Config, "content" | "presets"> = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/app/**/*.tsx"],
   presets: [sharedConfig],
 };
 
 export default config;
+
+module.exports = {
+  content: ["./storybook-static/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+};
