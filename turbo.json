@@ -15,6 +15,9 @@
     },
     "clean": {
       "cache": false
-    }
+    },
+    "test": {},
+    "e2e": {},
+    "test:ci": {}
   }
 }
