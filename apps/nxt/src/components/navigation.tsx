@@ -34,6 +34,17 @@ export default function Navigation() {
               </span>
             </Link>
           </li>
+          <li>
+            <Link href="/contact">
+              <span
+                className={`${classes} ${
+                  pathname === "/contact" ? activeClasses : ""
+                }`}
+              >
+                Contact
+              </span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
