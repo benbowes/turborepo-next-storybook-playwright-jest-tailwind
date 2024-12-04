@@ -8,7 +8,7 @@ export type Monster = {
 
 export type MonstersResponse = {
   data: {
-    monsters: Pick<Monster, "image" | "index">[];
+    monsters: Pick<Monster, "image" | "index" | "name">[];
   };
 };
 
@@ -18,7 +18,7 @@ export type MonsterResponse = {
   };
 };
 
-export async function fetchAlbum() {
+export async function fetchAlbum({ pageParam }: { pageParam: number }) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_DND_API_URL}/graphql`,
     {
@@ -32,12 +32,13 @@ export async function fetchAlbum() {
               monsters(limit: $limit, skip: $skip) {
                 image
                 index
+                name
               }
             }
           `,
         variables: {
           limit: 10,
-          skip: 1,
+          skip: pageParam,
         },
       }),
     }
