@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPhoto } from "@/app/api/fetchAlbum";
@@ -25,12 +26,30 @@ export default function Page() {
     );
   }
 
+  const monster = data.data.monster;
+
   return (
     <PageWrapper>
       <Text as="h1" size="xl" variant="dark" className="mb-4">
-        {data.title}
+        {data.data.monster.name}
       </Text>
-      <img key={data.id} src={data.url} alt={data.title} className="" />
+      <Image
+        src={`${process.env.NEXT_PUBLIC_DND_API_URL}${monster.image}`}
+        alt={monster.index}
+        className=""
+        width="1024"
+        height="1024"
+      />
+
+      <Text as="h2" size="lg" variant="dark" className="my-4">
+        Characteristics
+      </Text>
+      <div className="grid gap-2 grid-cols-2">
+        <div>Type</div>
+        <div>{monster.type}</div>
+        <div>Languages</div>
+        <div>{monster.languages}</div>
+      </div>
     </PageWrapper>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { Spinner } from "@/components";
@@ -21,12 +22,14 @@ export default function Album() {
 
   return (
     <div>
-      <div className="grid gap-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6">
-        {data?.map((image) => (
-          <Link key={image.id} href={`gallery/${image.id}`}>
-            <img
-              src={image.url}
-              alt={image.title}
+      <div className="grid gap-2 grid-cols-1">
+        {data?.data.monsters.map((monster) => (
+          <Link key={monster.index} href={`gallery/${monster.index}`}>
+            <Image
+              width={1024}
+              height={1024}
+              src={`${process.env.NEXT_PUBLIC_DND_API_URL}${monster.image}`}
+              alt={monster.index}
               className="object-cover w-full h-36 cursor-pointer hover:opacity-70"
             />
           </Link>

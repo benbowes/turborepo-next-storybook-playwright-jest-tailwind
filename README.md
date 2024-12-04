@@ -41,6 +41,7 @@ Using Turborepo simplifies managing your design system monorepo, as you can have
 
 This Turborepo includes the following packages and applications:
 
+- `apps/nxt`: A next.js site
 - `apps/docs`: Component documentation site with Storybook
 - `packages/ui`: Core React components
 - `packages/utils`: Shared React utilities
@@ -50,6 +51,14 @@ This Turborepo includes the following packages and applications:
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-w` workspaces flag with `pnpm add`.
 
 This example sets up your `.gitignore` to exclude all generated files, other folders like `node_modules` used to store your dependencies.
+
+## Setup
+
+Place an `.env` file with this entry under /apps/nxt/.env so that the images work
+
+```
+NEXT_PUBLIC_DND_API_URL=https://www.dnd5eapi.co
+```
 
 ### Compilation
 
