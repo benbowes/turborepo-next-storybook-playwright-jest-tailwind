@@ -34,7 +34,7 @@
   "scripts": {
     "build": "tsup | npx tailwindcss -i global.css -o dist/ui.css",
     "dev": "tsup --watch | npx tailwindcss -i global.css -o dist/ui.css --watch",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint src --max-warnings 0",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
