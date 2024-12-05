@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "npm run build && concurrently \"next start -p 8080\" \"npx playwright test && pkill -15 ^next-server && exit 0\"",
+    "e2e": "npx playwright test --debug",
     "test:ci": "npm run lint && npm run test && npm run build && concurrently \"next start -p 8080\" \"npx playwright test && pkill -15 ^next-server && exit 0\""
   },
   "workspaces": [
