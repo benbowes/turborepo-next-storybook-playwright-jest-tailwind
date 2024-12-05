@@ -17,11 +17,14 @@ export default function Album() {
       queryFn: fetchAlbum,
       initialPageParam: 0,
       getNextPageParam: () => nextPage.current,
+
+      refetchIntervalInBackground: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
     });
 
-  const { ref, inView } = useInView({ delay: 10000, threshold: 1 });
-
-  console.log(data);
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     if (inView) {
@@ -67,7 +70,9 @@ export default function Album() {
           </div>
         ))}
       </div>
-      <div ref={ref}>
+
+      {/* If this InView-element is in screen view, fetch more data */}
+      <div data-testid="InView-element" ref={ref}>
         {isFetchingNextPage && (
           <div className="flex items-center">
             <Spinner /> <div className="pl-2">Loading...</div>
