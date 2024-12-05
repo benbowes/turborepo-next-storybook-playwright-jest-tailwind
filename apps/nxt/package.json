@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "npm run build && concurrently \"npm run start\" \"npx playwright test && pkill -15 ^next-server && exit 0\"",
+    "e2e": "npx playwright test --debug",
     "test:ci": "npm run lint && npm run test && npm run build && concurrently \"next start -p 8080\" \"npx playwright test && pkill -15 ^next-server && exit 0\""
   },
   "workspaces": [
@@ -26,6 +26,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
+    "react-intersection-observer": "^9.13.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
